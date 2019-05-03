@@ -64,11 +64,15 @@ export class AsteroidsComponent implements OnInit {
           }
         }
         console.log(harmful);
-        console.log("The largest asteroid has an expected average size of " + largest + " feet in diameter")
-        var harmfulText = document.createTextNode("The largest asteroid has an expected average size of " + largest + " feet in diameter");
+        var harmfulText = document.createTextNode("There are " + harmful + " potentially harmful asteroids detected near earth.");
         var harmfulH3 = document.createElement('h3');
         harmfulH3.appendChild(harmfulText);
         container.appendChild(harmfulH3);
+        console.log("The largest asteroid has an expected average size of " + largest + " feet in diameter");
+        var largestText = document.createTextNode("The largest asteroid has an expected average size of " + largest + " feet in diameter");
+        var largestH3 = document.createElement('h3');
+        largestH3.appendChild(largestText);
+        container.appendChild(largestH3);
     })
 
 
