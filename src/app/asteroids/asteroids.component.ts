@@ -45,6 +45,11 @@ export class AsteroidsComponent implements OnInit {
             return response.json()
         })
         .then(data => {
+        var container = document.getElementById('container');
+        let info = document.createTextNode("Add a url parameter like asteroids/yyyy-m-d to get info from the date of your choice");
+        let infoH6 = document.createElement('h6');
+        infoH6.appendChild(info);
+        container.appendChild(infoH6);
         let harmful = 0;
         let largest = 0
         console.log("There were " + data.element_count + " Near Earth Objects during this time.");
@@ -64,15 +69,11 @@ export class AsteroidsComponent implements OnInit {
           }
         }
         console.log(harmful);
-        var harmfulText = document.createTextNode("There are " + harmful + " potentially harmful asteroids detected near earth.");
+        console.log("The largest asteroid has an expected average size of " + largest + " feet in diameter")
+        var harmfulText = document.createTextNode("The largest asteroid has an expected average size of " + largest + " feet in diameter");
         var harmfulH3 = document.createElement('h3');
         harmfulH3.appendChild(harmfulText);
         container.appendChild(harmfulH3);
-        console.log("The largest asteroid has an expected average size of " + largest + " feet in diameter");
-        var largestText = document.createTextNode("The largest asteroid has an expected average size of " + largest + " feet in diameter");
-        var largestH3 = document.createElement('h3');
-        largestH3.appendChild(largestText);
-        container.appendChild(largestH3);
     })
 
 
