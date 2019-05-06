@@ -15,8 +15,16 @@ export class MarsroverComponent implements OnInit {
         let month = start.getMonth() + 1; //months from 1-12
         let day = start.getDate();
         let year = start.getFullYear();
-        
+        let monthstring = month.toString();
+        let dstring = day.toString();
+        let ystring = year.toString();
+        let datestring = ystring + "-" + monthstring + "-" + dstring;
 
+        let container = document.getElementById('container');
+        let info = document.createTextNode("Add a url parameter like asteroids/yyyy-m-d to get info from the date of your choice");
+        let infoH6 = document.createElement('h6');
+        infoH6.appendChild(info);
+        container.appendChild(infoH6);
     let api_key = 'GXFHdaG2tdwfk0BY8l9jvqzVIF58tUbzfy9y2h2k';
 
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`
@@ -30,6 +38,8 @@ export class MarsroverComponent implements OnInit {
     return response.json();
   })
   .then(data => {
+    
+    console.log(datestring);
     console.log(data);
     let container = document.getElementById('container');
     let roverImg = data.photos[0].img_src;
