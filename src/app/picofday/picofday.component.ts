@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-picofday',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PicofdayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
+
+  private date: any;
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.date = params.get("date")
+    })
 
 	function createNode(element) {
 	  return document.createElement(element);
@@ -21,7 +27,11 @@ export class PicofdayComponent implements OnInit {
 
 	const ul = document.getElementById('astronomyPic');
 	const key = `7bvmKR9XfNoD1gAaIxFbedxzrd3151mylV9Ov5kg`;
-	const url = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
+	let url = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
+	console.log(this.date);
+	if (this.date != null) {
+	  url = `https://api.nasa.gov/planetary/apod?date=${this.date}&api_key=${key}`;
+	}
 	fetch(url)
 	.then((resp) => resp.json())
 	  .then(function(data) {
