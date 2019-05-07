@@ -8,6 +8,8 @@ import { MarsroverComponent } from './marsrover/marsrover.component';
 import { PicofdayComponent } from './picofday/picofday.component';
 import { HomeComponent } from './home/home.component';
 import { AsteroidsComponent } from './asteroids/asteroids.component';
+import { MarsroverdateComponent } from './marsroverdate/marsroverdate.component';
+import { AsteroidsdateComponent } from './asteroidsdate/asteroidsdate.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AsteroidsComponent } from './asteroids/asteroids.component';
     MarsroverComponent,
     PicofdayComponent,
     HomeComponent,
-    AsteroidsComponent
+    AsteroidsComponent,
+    MarsroverdateComponent,
+    AsteroidsdateComponent
   ],
   imports: [
     BrowserModule,
