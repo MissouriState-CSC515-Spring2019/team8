@@ -30,8 +30,9 @@ section {
 	padding: 2em;
 }
 h6{
+	font-family:Arial;
 	text-align:center;
-	font-size:35px;
+	font-size:40px;
 }
 img{
 	display:block;
@@ -40,6 +41,7 @@ img{
 	border: 3mm ridge grey;
 }
 h3{
+	font-family:Times New Roman;
 	text-align:center;
 	font-size:30px;
 }
