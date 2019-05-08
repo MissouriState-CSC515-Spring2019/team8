@@ -1,11 +1,14 @@
 html{
 	display: table;
 	margin: auto;
+	background-color: #f0f8ff;
 }
 
 body{
 	display: table-cell;
 	vertical-align:middle;
+	padding:3mm;
+	border: 3mm ridge grey;
 }
 
 h1 {
