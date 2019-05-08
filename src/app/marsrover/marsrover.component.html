@@ -1,4 +1,18 @@
-
-<div id="container">
-
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Mars Rover
+    </title>
+  </head>
+  <body>
+    
+    <form method="post" id="submit" #form>
+      <input id="date-input" placeholder="Please enter date in yyyy-mm-dd format"> 
+      <button type="button" (click)="form.submit()">Submit</button>
+    </form>
+    <div id="currentPic">
+      Enter a date to see a picture from the Mars Rover!
+    </div>
+  </body>
+</html>
