@@ -1,5 +1,5 @@
 header {
-	background: #290991
+	background: #616BFE;
 }
 header .logo {
 	font-weight: bold;
@@ -19,7 +19,8 @@ header nav ul li a {
 	padding: 1.5em;
 	text-transform: uppercase;
 	font-size: .8em;
+	font-family: Arial;
 }
 header nav ul li a:hover {
-	background: #130347;
+	background: #0112FE;
 }
