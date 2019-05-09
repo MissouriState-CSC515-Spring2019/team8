@@ -46,10 +46,6 @@ export class AsteroidsComponent implements OnInit {
         })
         .then(data => {
         var container = document.getElementById('container');
-        //let info = document.createTextNode("Add a url parameter like asteroids/yyyy-m-d to get info from the date of your choice");
-        //let infoH6 = document.createElement('h6');
-        //infoH6.appendChild(info);
-        //container.appendChild(infoH6);
         let harmful = 0;
         let largest = 0
         console.log("There were " + data.element_count + " Near Earth Objects during this time.");
