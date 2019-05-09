@@ -52,11 +52,6 @@ export class AsteroidsdateComponent implements OnInit {
         })
         .then(data => {
           var container = document.getElementById('container');
-          //let info = document.createTextNode('Add a url parameter like <font color="red">asteroids/yyyy-m-d</font> to get info from the date of your choice');
-          //let infoH6 = document.createElement('h6');
-          //infoH6.appendChild(info);
-          //container.appendChild(infoH6);
-          
           if(load==true){
           let harmful = 0;
           let largest = 0
