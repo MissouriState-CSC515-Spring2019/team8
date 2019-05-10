@@ -34,27 +34,32 @@ export class PicofdayComponent implements OnInit {
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	if (this.date != null) {
 	  url = `https://api.nasa.gov/planetary/apod?date=${this.date}&api_key=${key}`;
-	  dateData = this.date.split("-");
-	  if (Number(dateData[1]) > 12) document.getElementById("dateDisplay").innerHTML = "Invalid Date";
-	  else {
-	  	dateDisplay = months[Number(dateData[1])-1] + " " + dateData[2] + ", " + dateData[0];
-	  	document.getElementById("dateDisplay").innerHTML = dateDisplay;
-	  }
 	} else {
 	  dateDisplay = months[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
 	  document.getElementById("dateDisplay").innerHTML = dateDisplay;
 	}
 	fetch(url)
-	.then((resp) => resp.json())
-	  .then(function(data) {
+	.then(response => {
+	if(response.status !== 200){
+		let span = createNode('span');
+    	span.innerHTML = "There seems to be no picture for this day. Enter a new date and try again.";
+		append(ul, span);
+	}
+	return response.json();
+	})
+	  .then(data => {
 	  	if (data.url != undefined) {
+	  	  if (this.date != null) {
+	  	  	dateData = this.date.split("-");
+	  	  	if (Number(dateData[1]) > 12) document.getElementById("dateDisplay").innerHTML = "Invalid Date";
+	  	  	else {
+	  	    	dateDisplay = months[Number(dateData[1])-1] + " " + dateData[2] + ", " + dateData[0];
+	  	    	document.getElementById("dateDisplay").innerHTML = dateDisplay;
+	  	  	}
+	  	  }
 	   	  let img = createNode('img');
 	      img.src = data.url;
 	      append(ul, img);
-	  	} else {
-          let span = createNode('span');
-    	  span.innerHTML = "There seems to be no picture for this day. Enter a new date and try again.";
-	  	  append(ul, span);
 	  	}
 	  })
 	.catch(function(error) {
