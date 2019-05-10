@@ -21,7 +21,15 @@ export class MarsroverComponent implements OnInit {
         let datestring = ystring + "-" + monthstring + "-" + dstring;
 
         let container = document.getElementById('container');
+        let ul = document.getElementById("roverPic")
+        function createNode(element) {
 
+          return document.createElement(element);
+        }
+    
+        function append(parent, el) {
+          return parent.appendChild(el);
+        }
     let api_key = 'GXFHdaG2tdwfk0BY8l9jvqzVIF58tUbzfy9y2h2k';
 
     const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${year}-${month}-${day}&api_key=${api_key}`
@@ -29,8 +37,9 @@ export class MarsroverComponent implements OnInit {
 
   .then(response => {
     if(response.status !== 200){
-      alert("Something went wrong. Please refresh the page");
-    }
+      let span = createNode('span');
+    	span.innerHTML = "There seems to be no picture for this day. Enter a new date and try again.";
+		  append(ul, span);    }
     //console.log(response.json());
     return response.json();
   })
@@ -44,11 +53,11 @@ export class MarsroverComponent implements OnInit {
     document.getElementById("dateDisplay").innerHTML = dateDisplay;
     let container = document.getElementById('container');
     let roverImg = data.photos[0].img_src;
-    let imgElement = document.createElement('img');
-    imgElement.src = roverImg;
-    container.appendChild(imgElement);
+    let img = createNode('img');
+    img.src = roverImg;
+    append(ul, img);
   })
-
+  
   }
 
 }
