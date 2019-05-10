@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'marsrover', component: MarsroverComponent},
   {path: 'marsrover/:date', component: MarsroverdateComponent},
   {path: 'picofday', component: PicofdayComponent},
+  {path: "picofday/:date", component: PicofdayComponent},
   {path: 'asteroids', component: AsteroidsComponent},
   {path: 'asteroids/:date', component: AsteroidsdateComponent}
   

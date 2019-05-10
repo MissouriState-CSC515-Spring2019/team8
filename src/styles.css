@@ -1,6 +1,7 @@
 body, html {
 	height: 100%;
 	margin: 0 auto;
+	background-color: #f0f8ff;
 }
 
 body { 
@@ -27,4 +28,21 @@ section {
 	width: 80%;
 	margin: 0 auto;
 	padding: 2em;
+}
+h6{
+	font-family:Arial;
+	text-align:center;
+	font-size:40px;
+}
+img{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	border: 3mm ridge grey;
+	box-shadow: 10px 5px #888888;
+}
+h3{
+	font-family:Times New Roman;
+	text-align:center;
+	font-size:30px;
 }

@@ -1,3 +1,27 @@
+html{
+	display: table;
+	margin: auto;
+	background-color: #f0f8ff;
+}
+
+body{
+	display: table-cell;
+	vertical-align:middle;
+	padding:3mm;
+	border: 3mm ridge grey;
+}
+
 h1 {
 	font-weight: bold;
+	font-family: Arial;
+	font-size:40px;
+}
+h3{
+	font-size: 35px;
+}
+h4{
+	font-size: 30px;
+}
+ul li{
+	font-size: 25px;
 }
