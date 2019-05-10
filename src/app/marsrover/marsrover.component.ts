@@ -38,6 +38,10 @@ export class MarsroverComponent implements OnInit {
     
     console.log(datestring);
     console.log(data);
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let dateData = datestring.split("-");
+    let dateDisplay = months[Number(dateData[1])-1] + " " + dateData[2] + ", " + dateData[0] + " (7 Days Ago)";
+    document.getElementById("dateDisplay").innerHTML = dateDisplay;
     let container = document.getElementById('container');
     let roverImg = data.photos[0].img_src;
     let imgElement = document.createElement('img');
